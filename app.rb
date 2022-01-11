@@ -8,8 +8,7 @@ class BookmarkManager < Sinatra::Base
   end
 
   get '/bookmarks' do
-    # render erb view using the model 
-    erb:index
+    erb(:index)
   end 
 
   run! if app_file == $0
