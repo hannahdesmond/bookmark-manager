@@ -1,10 +1,13 @@
+require 'pg'
+
 class Bookmark
 
     def self.all
-        [
-            'http://www.google.co.uk',
-            'http://www.makersacademy.com'
-        ]
+      connection = PG.connect :dbname => 'bookmark_manager'
+      rows = connection.exec "SELECT * FROM bookmarks"
+      rows.map do |row| 
+        row['url']
+      end
     end 
 
 end 
