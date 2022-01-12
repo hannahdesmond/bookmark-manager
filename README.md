@@ -1,9 +1,15 @@
 Show a list of bookmarks
 
 ## User Stories
+```
 As a user
 So that I can revisit website that I like
 I can see the list of bookmarks
+
+As a user
+So that I can revisit website that I like
+I can add bookmarks to the list
+```
  
 Domain Model 
 

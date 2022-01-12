@@ -1,4 +1,4 @@
-feature BookmarkManager do
+feature "See all bookmarks" do
   scenario 'users can see all bookmarks' do
 
     connection = PG.connect(dbname: 'bookmark_manager_test')

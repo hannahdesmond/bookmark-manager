@@ -12,5 +12,10 @@ class BookmarkManager < Sinatra::Base
     erb(:index)
   end 
 
+  post '/add' do
+    # open the connection
+    # add to the database  
+  end
+
   run! if app_file == $0
 end
