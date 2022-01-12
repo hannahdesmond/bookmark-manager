@@ -17,10 +17,6 @@ describe Bookmark do
 
   describe '#create' do
     it 'adds a new bookmark to the database' do
-      connection = PG.connect(dbname: 'bookmark_manager_test')
-      rows = connection.exec "SELECT * FROM bookmarks;"
-      p rows
-      
       Bookmark.create('http://youtube.com')
       expect(Bookmark.all).to include('http://youtube.com')
     end

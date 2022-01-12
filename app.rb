@@ -13,8 +13,9 @@ class BookmarkManager < Sinatra::Base
   end 
 
   post '/add' do
-    # open the connection
-    # add to the database  
+    bookmark = params[:Bookmark]
+    Bookmark.create(bookmark)
+    redirect('/bookmarks')
   end
 
   run! if app_file == $0
