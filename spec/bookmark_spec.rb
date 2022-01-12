@@ -17,10 +17,18 @@ describe Bookmark do
 
   describe '#create' do
     it 'adds a new bookmark to the database' do
-      Bookmark.create('http://youtube.com')
+      Bookmark.create('http://youtube.com', 'YouTube')
       expect(Bookmark.all).to include('http://youtube.com')
     end
   end
+
+  describe '#title' do
+    it 'shows the title for a bookmark' do
+      Bookmark.create('http://youtube.com', 'YouTube')
+      expect(Bookmark.title).to eq 'YouTube'
+    end
+  end
+  
 end 
 
         
