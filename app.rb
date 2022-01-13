@@ -13,12 +13,9 @@ class BookmarkManager < Sinatra::Base
   end 
 
   post '/add' do
-    # getting params from form
     bookmark = params[:bookmark]
     title = params[:title]
-    
     Bookmark.create(bookmark, title)
-
     redirect('/bookmarks')
   end
 

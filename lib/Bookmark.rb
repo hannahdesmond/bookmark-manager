@@ -9,7 +9,15 @@ class Bookmark
     end
     rows = connection.exec "SELECT * FROM bookmarks;"
     bookmarks = {}
-    rows.each { |row| bookmarks[row['title']] = row['url']; p row['title']}
+    rows.each do |row| 
+      bookmarks[row['title']] = row['url']
+    end
+    p bookmarks # this is not what we want to return now. 
+    # I think the tests need adjusting to reflect the information 
+    # that we want
+    # we want the titles rendered on the page, but each one has 
+    # the url as a clickable link. We looked at hashes but also
+    # could look at arrays.
   end 
 
   def self.create(url, title)
@@ -20,7 +28,7 @@ class Bookmark
     else 
       connection = PG.connect :dbname => 'bookmark_manager'
     end
-    connection.exec "INSERT INTO bookmarks (url) VALUES('#{url}');"
+    connection.exec "INSERT INTO bookmarks (url, title) VALUES('#{url}', '#{title}');"
   end
 
   def self.title
