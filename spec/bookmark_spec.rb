@@ -23,12 +23,12 @@ describe Bookmark do
     end
   end
 
-  describe '#title' do
-    it 'shows the title for a bookmark' do
-      Bookmark.create('http://youtube.com', 'YouTube')
-      expect(Bookmark.title).to eq 'YouTube'
-    end
-  end
+  # describe '#title' do
+  #   it 'shows the title for a bookmark' do
+  #     Bookmark.create('http://youtube.com', 'YouTube')
+  #     expect(Bookmark.title).to eq 'YouTube'
+  #   end
+  # end
   
 end 
 
