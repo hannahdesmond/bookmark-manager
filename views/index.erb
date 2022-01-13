@@ -10,8 +10,8 @@
 </div>
 
 <div> 
-  <% @bookmarks.each { |bookmark| %> 
-    <p><%= bookmark %></p>
+  <% @bookmarks.each { |title, url| %> 
+    <a href="<%= url %>"><%= title %></a>
   <% } %> 
 </div>
 
